@@ -56,10 +56,15 @@ class Person:
         else:
             print(f"Your name is {self.name} {self.surname}, but your friends call you {self.nickname}")
     def walk (self):
-        print(f"{self.nickname}  walks")
+        if self.nickname == "No nickname":
+            print(f"{self.name} walks")
+        else:
+            print(f"{self.nickname} walks")
 
 person_02 = Person("Jhon", "Doe", "Jhonny")
 person_02.info()
+person_02.walk()
 
 person_02 = Person("Alice", "Smith")
 person_02.info()
+person_02.walk()

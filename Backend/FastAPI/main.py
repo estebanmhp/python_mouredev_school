@@ -1,6 +1,7 @@
 # API Basics
 
 from fastapi import FastAPI
+from Routers import products, users
 
 app = FastAPI()
 
@@ -17,4 +18,9 @@ async def root():
 @app.get("/url") # http://127.0.0.1:8000/url
 async def url_course():
     return {"url_course": "https://mouredev.com/python"}
+
+# ROUTERS
+
+app.include_router(products.router)
+app.include_router(users.router)
 

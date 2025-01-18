@@ -2,6 +2,7 @@
 
 from fastapi import FastAPI
 from Routers import products, users
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -24,3 +25,7 @@ async def url_course():
 app.include_router(products.router)
 app.include_router(users.router)
 
+# STATICS
+# Example -> http://127.0.0.1:8000/statics/Images/Python-01.jpg
+
+app.mount("/statics", StaticFiles(directory="Statics"), name="static")

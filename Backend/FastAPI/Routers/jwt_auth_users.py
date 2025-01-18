@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import jwt, JWTError
@@ -9,7 +9,7 @@ ALGORITHM = "HS256"
 TOKEN_DURATION = 1
 SECRET = "1a5c67ad8c2935f95269786d851bee514b9c9a65285ab9331fe4b8c1de2dc89c"
 
-app = FastAPI()
+router = APIRouter()
 oauth2 = OAuth2PasswordBearer(tokenUrl = "login")
 crypt = CryptContext(schemes = ["bcrypt"])
 
@@ -69,7 +69,7 @@ async def current_user(user: User = Depends(auth_user)):
     
     return user
 
-@app.post("/login/jwt")
+@router.post("/login/jwt")
 async def login(form: OAuth2PasswordRequestForm = Depends()):
     user_db = users_db.get(form.username)
     if not user_db:
@@ -87,7 +87,7 @@ async def login(form: OAuth2PasswordRequestForm = Depends()):
     
     return {"access_token": jwt.encode(access_token, SECRET, algorithm = ALGORITHM), "token_type": "bearer"}
 
-@app.get("/users/me/jwt")
+@router.get("/users/me/jwt")
 async def me(user: User = Depends(current_user)):
     return user
 

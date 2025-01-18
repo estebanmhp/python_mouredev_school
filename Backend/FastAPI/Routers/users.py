@@ -1,14 +1,16 @@
 # API for users
 # Run the server: uvicorn users:app --reload
 
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-app = FastAPI()
+router = APIRouter(prefix="/users",
+                   tags=["users"],
+                   responses={404: {"Error": "Not found"}}) 
 
 # Manually option (add each user)
 
-@app.get("/usersjson") # http://127.0.0.1:8000/users
+@router.get("/usersjson") # http://127.0.0.1:8000/users
 async def usersjson():
     return [{"name": "Esteban", "surname" : "Hernan", "website": "https://esteban.dev"},
             {"name": "Viviana", "surname" : "Escorcia", "website": "https://viviana.co"},
@@ -39,19 +41,19 @@ def search_user(id: int):
 # GET
 # GET http://127.0.0.1:8000/users
 
-@app.get("/users") # http://127.0.0.1:8000/users
-async def users():
+@router.get("/") # http://127.0.0.1:8000/users
+async def users_get():
     return users_list
 
 # Path
 
-@app.get("/user/{id}") # http://127.0.0.1:8000/user/2/Viviana
+@router.get("/user/{id}") # http://127.0.0.1:8000/user/2/Viviana
 async def user(id: int):
     return search_user(id)
     
 # Query
 
-@app.get("/user/") # http://127.0.0.1:8000/user/?id=2&name=Viviana
+@router.get("/user") # http://127.0.0.1:8000/user/?id=2&name=Viviana
 async def user(id: int):
     return search_user(id)
 
@@ -67,7 +69,7 @@ async def user(id: int):
 #     "age": 30
 # }
 
-@app.post("/user", response_model=User, status_code=201)
+@router.post("/user", response_model=User, status_code=201)
 async def user_add(user: User):
     if type(search_user(user.id)) == User:
         raise HTTPException(status_code=405, detail="This user already exists")
@@ -87,7 +89,7 @@ async def user_add(user: User):
 #     "age": 37
 # }
 
-@app.put("/users", response_model=User, status_code=200)
+@router.put("/", response_model=User, status_code=200)
 async def user_update(user: User):
     found_user = False
 
@@ -104,7 +106,7 @@ async def user_update(user: User):
 # DELETE
 # DELETE http://127.0.0.1:8000/user/4
 
-@app.delete("/user/{id}", response_model=dict, status_code=200)
+@router.delete("/user/{id}", response_model=dict, status_code=200)
 async def user_delete(id: int):
     found_user = False
 

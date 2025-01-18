@@ -1,7 +1,19 @@
-from fastapi import FastAPI
+from fastapi import APIRouter
 
-app = FastAPI()
+# Default URL -> prefix="/products"
 
-@app.get("/products")
+router = APIRouter(prefix="/products",
+                   tags=["products"],
+                   responses={404: {"Error": "Not found"}}) 
+
+products_list = ["Item_01", "Item_02", "Item_03", "Item_04", "Item_05"] 
+
+# "/" = "/products"
+
+@router.get("/") 
 async def products():
-    return ["Item_01", "Item_02", "Item_03", "Item_04", "Item_05"] 
+    return products_list
+
+@router.get("/{id}")
+async def products_id(id: int):
+    return products_list[id]

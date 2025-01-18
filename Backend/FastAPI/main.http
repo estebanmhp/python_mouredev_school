@@ -1,0 +1,43 @@
+GET http://127.0.0.1:8000/products
+###
+GET http://127.0.0.1:8000/products/1
+###
+GET http://127.0.0.1:8000/users
+###
+POST http://127.0.0.1:8000/users/user
+Content-Type: application/json
+
+{
+    "id": 4,
+    "name": "John",
+    "surname": "Doe", 
+    "website": "john.doe.com",
+    "age": 30
+}
+###
+PUT  http://127.0.0.1:8000/users
+Content-Type: application/json
+
+{
+    "id": 4,
+    "name": "John",
+    "surname": "Doe",
+    "website": "https://johndoe.com",
+    "age": 37
+}
+###
+POST  http://127.0.0.1:8000/login/basic
+Content-Type: application/x-www-form-urlencoded
+
+username=estebanhp22&password=123456
+###
+GET   http://127.0.0.1:8000/users/me/basic
+Authorization: Bearer estebanhp22
+###
+POST  http://127.0.0.1:8000/login/jwt
+Content-Type: application/x-www-form-urlencoded
+
+username=estebanhp22&password=123456
+###
+GET   http://127.0.0.1:8000/users/me/jwt
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlc3RlYmFuaHAyMiIsImV4cCI6MTczNzI0MDI4Nn0.DaOfnhlxuwCOMUZ6WLj1N0hm8cxfDIuQCKiv5wabLwc

@@ -42,7 +42,7 @@ username=estebanhp22&password=123456
 GET   http://127.0.0.1:8000/users/me/jwt
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlc3RlYmFuaHAyMiIsImV4cCI6MTczNzI0MDI4Nn0.DaOfnhlxuwCOMUZ6WLj1N0hm8cxfDIuQCKiv5wabLwc
 
-# API Mongo DB
+# API Mongo DB (Local)
 
 ###
 POST  http://127.0.0.1:8000/userdb
@@ -75,3 +75,8 @@ Content-Type: application/json
     "username": "alex_smith",
     "email": "smith.alex123@example.com"
 }
+
+# API Mongo DB (Remote)
+
+###
+GET  http://127.0.0.1:8000/userdb

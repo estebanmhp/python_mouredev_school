@@ -80,3 +80,19 @@ Content-Type: application/json
 
 ###
 GET  http://127.0.0.1:8000/userdb
+###
+POST  http://127.0.0.1:8000/userdb
+Content-Type: application/json
+
+{
+    "username": "alex_smith",
+    "email": "alex.smith45@example.com"
+}
+###
+POST  http://127.0.0.1:8000/userdb
+Content-Type: application/json
+
+{
+    "username": "jhon_doe",
+    "email": "john.doe123@example.com"
+}

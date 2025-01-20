@@ -8,5 +8,8 @@ def footer() -> rx.Component:
         rx.link(
             "Esteban Hernandez", 
             href = "https://www.linkedin.com/in/esteban-m-hernandez/",
-            is_external = True)
+            is_external = True
+        ),
+        align="center",
+        justify="center"
     )

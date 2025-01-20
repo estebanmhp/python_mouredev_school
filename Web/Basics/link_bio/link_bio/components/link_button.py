@@ -4,5 +4,8 @@ def link_button(name: str, url: str) -> rx.Component:
     return rx.link(
         rx.button(name),
         href = url,
-        is_external = True
-    )    
+        is_external = True,
+        align="center",
+        justify="center"  
+    )
+      

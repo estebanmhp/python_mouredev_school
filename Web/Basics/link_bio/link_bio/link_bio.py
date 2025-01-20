@@ -10,11 +10,15 @@ class State(rx.State):
 # Graphic return (rx.Component)
 
 def index() -> rx.Component:
-    return rx.vstack(
-        navbar(),
-        header(),
-        repo_links(),
-        footer()
+    return rx.center(
+        rx.vstack(
+            navbar(),
+            header(),
+            repo_links(),
+            footer(),
+            align="center",
+            justify="center"
+        )
     )
 
 app = rx.App()

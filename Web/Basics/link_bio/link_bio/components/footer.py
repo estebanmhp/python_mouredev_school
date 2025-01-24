@@ -26,7 +26,7 @@ def footer() -> rx.Component:
         ),
         rx.text(
             "PROGRAMMING WITH ♥ FROM COLOMBIA, DEVELOPING THE WORLD",
-            font_size = "0.75rem",
+            font_size = "0.65rem",
             margin_top = "-0.25em",
             margin_bottom = Size.BIG,
             color = TextColor.FOOTER

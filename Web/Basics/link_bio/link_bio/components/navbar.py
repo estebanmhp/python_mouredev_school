@@ -15,6 +15,8 @@ def navbar() -> rx.Component:
         background = Color.SECONDARY,
         padding_x = Size.DEFAULT,
         padding_y = Size.SMALL,
+        margin_left = "-1em",
+        margin_right = "-1em",
         z_index = "999",
         top = "0"
     )

@@ -40,11 +40,11 @@ def header() -> rx.Component:
             align_items = "center",
         ),
         rx.flex(
-            info_text("Developing", "every day"),
+            info_text("Exploring"),
             rx.spacer(),
-            info_text("Exploring", "tech"),
+            info_text("Developing"),
             rx.spacer(),            
-            info_text("Growing", "through projects"),
+            info_text("Growing"),
             width = "100%"
         ),
         rx.text(

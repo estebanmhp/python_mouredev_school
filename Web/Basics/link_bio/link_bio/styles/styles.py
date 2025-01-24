@@ -22,10 +22,11 @@ BASE_STYLE = {
     rx.button: {
         "width": "100%",
         "height": "100%",
-        "display": "block",
         "padding": Size.SMALL.value,
         "border_radius": Size.DEFAULT.value,
         "color": TextColor.HEADER,
+        "white_space": "normal",
+        "display": "block",
         "_hover": {
             "background_color": Color.PRIMARY
         },  
@@ -34,7 +35,10 @@ BASE_STYLE = {
     rx.link: {
         "text_decoration": "none",
         "_hover": {}
-    }
+    },
+    "padding_left": Size.DEFAULT,
+    "padding_right": Size.DEFAULT,
+    "margin_bottom": "-5em"
 }
 
 title_style = dict (

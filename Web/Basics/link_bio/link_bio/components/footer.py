@@ -11,7 +11,8 @@ def footer() -> rx.Component:
             src = "/images/logo.png",
             margin_top = Size.MEDIUM,
             width = "4em",
-            heigth = "4em"
+            heigth = "4em",
+            alt = "Logo <E/H>"
         ),
         rx.text(
             f"2022 - {datetime.date.today().year}  ",            

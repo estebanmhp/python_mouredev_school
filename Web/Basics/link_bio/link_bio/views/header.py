@@ -26,11 +26,13 @@ def header() -> rx.Component:
                 rx.hstack(
                     link_icon(
                         "/icons/github.png",
-                        "https://github.com/estebanmhp"
+                        "https://github.com/estebanmhp",
+                        "github"
                     ),
                     link_icon(
                         "/icons/linkedin.png",
-                        "https://www.linkedin.com/in/esteban-m-hernandez/"
+                        "https://www.linkedin.com/in/esteban-m-hernandez/",
+                        "linkeding"
                     ),
                 ),                
                 display = "block",
@@ -40,11 +42,11 @@ def header() -> rx.Component:
             align_items = "center",
         ),
         rx.flex(
-            info_text("Exploring"),
+            info_text("Exploring", "new techs"),
             rx.spacer(),
-            info_text("Developing"),
+            info_text("Developing", "every day"),
             rx.spacer(),            
-            info_text("Growing"),
+            info_text("Growing", "with projects"),
             width = "100%"
         ),
         rx.text(

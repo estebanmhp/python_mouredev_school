@@ -8,6 +8,8 @@ def link_button(title: str, body: str, url: str, image: str) -> rx.Component:
                 rx.image(
                     src = image,     
                     width = styles.Size.BIG,
+                    heigth = styles.Size.BIG,
+                    alt = title,
                     margin = styles.Size.DEFAULT,
                     margin_right = styles.Size.SMALL      
                 ),

@@ -1,13 +1,14 @@
 import reflex as rx
 import link_bio.styles.styles as styles
 
-def link_button(title: str, body: str, url: str) -> rx.Component:
+def link_button(title: str, body: str, url: str, image: str) -> rx.Component:
     return rx.link(
         rx.button(
             rx.hstack(
-                rx.icon(
-                    tag = "panel-left-open",     
-                    width = styles.Size.BIG            
+                rx.image(
+                    src = image,     
+                    width = styles.Size.BIG,
+                    margin = styles.Size.DEFAULT          
                 ),
                 rx.vstack(
                     rx.text(
@@ -19,7 +20,7 @@ def link_button(title: str, body: str, url: str) -> rx.Component:
                         style=styles.button_style_body
                     ),
                     align_items = "start",
-                    gap = styles.Size.EXTRA_SMALL 
+                    gap = styles.Size.EXTRA_SMALL
                 ),
                 align_items = "center"
             ),

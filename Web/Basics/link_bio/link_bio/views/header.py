@@ -3,23 +3,35 @@ import link_bio.styles.styles as styles
 from link_bio.components.link_icon import link_icon
 from link_bio.components.info_text import info_text
 from link_bio.styles.styles import Size as Size
+from link_bio.styles.colors import Color as Color
+from link_bio.styles.colors import TextColor as TextColor
 
 def header() -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
-                fallback = "EH DEV",
-                size = "6",
-                font_size = "12px",
-                weight = "bold",
-                radius = "full"
+                src="/images/Profile_photoV3.jpg",
+                size="7",
+                radius="full"
             ),
             rx.vstack(
-                rx.heading("Esteban Hernandez"),
-                rx.text("HELLO WORLD! 👋"),
+                rx.heading(
+                    "Esteban Hernandez",
+                    color = TextColor.HEADER
+                ),
+                rx.text(
+                    "HELLO WORLD! 👋",
+                    color = Color.PRIMARY
+                ),
                 rx.hstack(
-                    link_icon("https://github.com/estebanmhp"),
-                    link_icon("https://www.linkedin.com/in/esteban-m-hernandez/"),
+                    link_icon(
+                        "/icons/github.png",
+                        "https://github.com/estebanmhp"
+                    ),
+                    link_icon(
+                        "/icons/linkedin.png",
+                        "https://www.linkedin.com/in/esteban-m-hernandez/"
+                    ),
                 ),                
                 display = "block",
                 align_items = "center",
@@ -39,7 +51,8 @@ def header() -> rx.Component:
             """I'm a programming student passionate about backend development, focused in Python. 
             I enjoy working with web technologies and have experience using Git and GitHub for version control. 
             With a foundation in C and JavaScript, I'm eager to keep learning and growing my skills every day.""",
-            text_align = "justify"
+            text_align = "justify",
+            color = TextColor.BODY
         ),
         spacing = "6",
         align="start" 

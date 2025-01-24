@@ -12,7 +12,7 @@ def info_text(title: str, body: str) -> rx.Component:
                 font_weight = "bold",
                 color = Color.PRIMARY
             ),
-            rx.desktop_only(
+            rx.tablet_and_desktop(
                 rx.text(
                     body,
                     font_size = Size.MEDIUM,

@@ -6,10 +6,8 @@ from link_bio.views.repo_links import repo_links
 import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
 
-# class State(rx.State):
-#     """State here"""
-
-# Graphic return (rx.Component)
+class State(rx.State):
+    """State here"""
 
 def index() -> rx.Component:
     return rx.box(

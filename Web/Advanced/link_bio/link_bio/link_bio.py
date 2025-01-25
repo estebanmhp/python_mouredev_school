@@ -7,7 +7,7 @@ import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
 
 class State(rx.State):
-    pass
+    """State here"""
 
 # Graphic return (rx.Component)
 

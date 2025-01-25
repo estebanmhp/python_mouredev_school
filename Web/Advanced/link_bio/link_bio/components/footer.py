@@ -25,10 +25,12 @@ def footer() -> rx.Component:
             ),
             color = TextColor.FOOTER        
         ),
-        rx.text(
+        rx.link(
             "PROGRAMMING WITH ♥ FROM COLOMBIA, DEVELOPING THE WORLD",
+            href = "https://github.com/estebanmhp/python_mouredev_school/tree/main/Web",
             font_size = "0.65rem",
             margin_top = "-0.25em",
+            is_external = True,
             margin_bottom = Size.BIG,
             color = TextColor.FOOTER
         ),

@@ -20,7 +20,9 @@ def header() -> rx.Component:
                     color = TextColor.HEADER
                 ),
                 rx.text(
-                    "HELLO WORLD! 👋",
+                    "ARCHITECT BY EDUCATION, PROGRAMMER BY PASSION",
+                    font_size = Size.MEDIUM,
+                    font_weight = "450",
                     color = Color.PRIMARY
                 ),
                 rx.hstack(

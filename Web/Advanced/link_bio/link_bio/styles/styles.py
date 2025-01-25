@@ -33,8 +33,7 @@ BASE_STYLE = {
         "background_color": Color.SECONDARY
     },
     rx.link: {
-        "text_decoration": "none",
-        "_hover": {}
+        "text_decoration": "none"
     },
     "padding_left": Size.DEFAULT,
     "padding_right": Size.DEFAULT,

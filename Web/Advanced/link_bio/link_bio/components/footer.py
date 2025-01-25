@@ -21,6 +21,7 @@ def footer() -> rx.Component:
                 href = "https://www.linkedin.com/in/esteban-m-hernandez/",
                 margin_top = "-0.25em",
                 is_external = True,
+                color_scheme = "gray",
                 color = Color.PRIMARY
             ),
             color = TextColor.FOOTER        
@@ -32,6 +33,7 @@ def footer() -> rx.Component:
             margin_top = "-0.25em",
             is_external = True,
             margin_bottom = Size.BIG,
+            color_scheme = "mint",
             color = TextColor.FOOTER
         ),
         gap = styles.Size.EXTRA_SMALL,

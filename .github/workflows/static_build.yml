@@ -25,7 +25,7 @@ jobs:
       - name: Run build script
         run: |
           chmod +x ./Web/Advanced/link_bio/remote_build.sh
-          ./link_bio/remote_build.sh
+          ./Web/Advanced/link_bio/remote_build.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -2,7 +2,7 @@ import reflex as rx
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
 
-def repo_links() -> rx.Component:
+def repo_links(featured = []) -> rx.Component:
     return rx.vstack(
         title("Learning and Building"),
         link_button(
@@ -54,6 +54,27 @@ def repo_links() -> rx.Component:
             "https://www.w3schools.com/html/",
             "/icons/frontend.png"
         ),
+        # rx.cond (
+        #     len(featured > 0),
+        #     rx.vstack(
+        #         title("Featured"),
+        #         rx.foreach(
+        #             featured,
+        #             lambda item: rx.responsive_grid(
+        #                 rx.link(
+        #                     rx.image(
+        #                         src=item["image"]
+        #                     ),
+        #                     rx.text(
+        #                         item["title"]                                    
+        #                     ),
+        #                     href=item["url"],
+        #                     is_external=True
+        #                 )
+        #             )                    
+        #         )
+        #     )   
+        # ),
         title("Contact me"),
         link_button(
             "Email",

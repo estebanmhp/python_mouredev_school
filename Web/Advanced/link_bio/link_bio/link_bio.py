@@ -5,9 +5,12 @@ from link_bio.views.header import header
 from link_bio.views.repo_links import repo_links
 import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
+from link_bio.api.api import repo, live
 
 class State(rx.State):
-    """State here"""
+    is_live: bool
+    async def check_live(self):
+        is_live = live("mouredev")
 
 def index() -> rx.Component:
     return rx.box(
@@ -23,7 +26,7 @@ def index() -> rx.Component:
                 margin_y = Size.BIG.value
             ),
         ),
-        footer()
+        footer(),
     )
 
 app = rx.App(
@@ -35,3 +38,5 @@ app.add_page(
     description = "Developer focused on building projects, honing skills, and embracing new technologies every day",
     image = "/images/logo.png"
 )
+app.api.add_api_route("/repo", repo)
+app.api.add_api_route("/live/{user}", live)
